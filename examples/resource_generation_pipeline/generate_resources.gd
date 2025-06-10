@@ -37,7 +37,7 @@ func _run():
     ResourceUtil.merge_resources_arrays(csv_enemies, enemy_resources_to_update, ENEMY_ID_PARAM_NAME, properties_to_merge, true)
     ResourceUtil.save_and_clean_all_resources_to_filesystem(CLASS_NAME, enemy_resources_to_update, SAVE_DIR, ENEMY_ID_PARAM_NAME)
 
-    #Create refernece script for all Upgrades
+    #Create reference script for all Upgrades
     ResourceReferenceGenerator.create_reference_script(CLASS_NAME, ENEMY_ID_PARAM_NAME, SAVE_DIR)
 
     # Update editor after file changes
