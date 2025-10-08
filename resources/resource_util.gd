@@ -33,6 +33,14 @@ static func load_resources_in_editor(resource_type:Script, directory_path:String
 
     return result_array
 
+static func load_resources_from_directory(directory_path:String) -> Array[Resource]:
+    var resources:Array[Resource] = []
+    var file_paths := ResourceLoader.list_directory(directory_path)
+    for file_path:String in file_paths:
+        resources.push_back(ResourceLoader.load(directory_path + file_path))
+    return resources
+
+
 ## Merges property values from resources [code]source_resources[/code] into matching resources in [code]target_resources[/code].
 ## Matches occur on the value of the id property.  Only the properties defined are merged. Optionally, enable removeal of
 ## resources that don't exist in the source

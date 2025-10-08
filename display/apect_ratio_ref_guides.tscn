@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://drknxdf6jt1hv"]
+
+[ext_resource type="Script" uid="uid://b8aojs5uducw1" path="res://addons/dewlap_tools/display/apect_ratio_ref_guides.gd" id="1_obodk"]
+
+[node name="AspectReferenceGuide" type="Node"]
+script = ExtResource("1_obodk")
+base_size = null
+landscape_range_min = null
+landscape_range_max = null
+portrait_range_max = null
+portrait_range_min = null
+
+[node name="HReferenceRectMax" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.48235294)
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="HReferenceRectMin" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.48235294)
+offset_right = 480.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="VReferenceRectMax" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.48235294)
+offset_right = 360.0
+offset_bottom = 640.0
+mouse_filter = 2
+border_color = Color(1, 0.20815772, 0.9885601, 1)
+
+[node name="VReferenceRectMin" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.48235294)
+offset_right = 360.0
+offset_bottom = 480.0
+mouse_filter = 2
+border_color = Color(1, 0.20784314, 0.9882353, 1)

@@ -85,6 +85,7 @@ static func create_reference_script(resource_class: Script, id_property_name:Str
 
 ## Generates the reference script text from a list of resources
 static func _generate_reference_script_from_resources(resource_class: Script, resources: Array[Resource], id_property_name: String = "id") -> String:
+    prints("Resources found: ", resources.size())
     #Get Class Name
     var resource_class_name = resource_class.get_global_name()
 
@@ -95,8 +96,9 @@ static func _generate_reference_script_from_resources(resource_class: Script, re
 
 
     for resource in resources:
-        var id: String = resource.get(id_property_name) as String
+        var id: String = str(resource.get(id_property_name)) as String
         assert(id != null, "Resource id property is null")
+        prints("Generating resource:", id)
         id_constants_string += "const " + id.to_upper() + " = \"" + id + "\"\n"
         resource_paths.set(id, resource.resource_path)
         # Append getter function template

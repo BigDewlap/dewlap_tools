@@ -44,17 +44,22 @@ static func parse_csv_to_resource_list(resource_class:Script, csv_path:String, m
 
     var headers := file.get_line().strip_edges().split(",")
     print("Creating resources of type: " + resource_class.get_global_name() + " with the following properties: " + str(headers))
+    var line_number:int = 0
     while not file.eof_reached():
+        line_number += 1
         var line := file.get_line().strip_edges()
         if line == "":
             continue
         var values := line.split(",")
         var resource = resource_class.new()
 
+        # Print data
+        for i in headers.size():
+                print("(" + str(line_number) + ") " + str(headers[i]) + ": " + str(values[i]))
+
         if mapper.is_null():
             # Read all columns into matching properties
             for i in headers.size():
-                print("i:" + str(i) + ", header[i]: " + str(headers[i]) + ", values[i]: " + str(values[i]) )
                 resource[headers[i]] = values[i]
         else:
             mapper.call(headers, values, resource)
