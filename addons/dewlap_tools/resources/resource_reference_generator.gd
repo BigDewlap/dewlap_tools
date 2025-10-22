@@ -97,13 +97,14 @@ static func _generate_reference_script_from_resources(resource_class: Script, re
 
     for resource in resources:
         var id: String = str(resource.get(id_property_name)) as String
+        var normalized_id = id.replace(" ", "_")
         assert(id != null, "Resource id property is null")
-        prints("Generating resource:", id)
-        id_constants_string += "const " + id.to_upper() + " = \"" + id + "\"\n"
-        resource_paths.set(id, resource.resource_path)
+        prints("Generating resource:", normalized_id)
+        id_constants_string += "const " + normalized_id.to_upper() + " = \"" + normalized_id + "\"\n"
+        resource_paths.set(normalized_id, resource.resource_path)
         # Append getter function template
         var getter_string = getter_template.replace("[[RESOURCE_CLASS_NAME]]", resource_class_name)
-        getter_string = getter_string.replace("[[RESOURCE_ID]]", id)
+        getter_string = getter_string.replace("[[RESOURCE_ID]]", normalized_id)
         getter_strings += getter_string
 
     var reference_script_string: String = script_template
