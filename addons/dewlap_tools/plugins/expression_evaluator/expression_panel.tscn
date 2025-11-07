@@ -1,0 +1,184 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnkvl87a5yxur"]
+
+[ext_resource type="Script" uid="uid://brtowoakldjpe" path="res://addons/dewlap_tools/plugins/expression_evaluator/expression_panel.gd" id="1_panel"]
+
+[node name="ExpressionPanel" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_panel")
+
+[node name="Toolbar" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ParseButton" type="Button" parent="Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Parse"
+
+[node name="ClearButton" type="Button" parent="Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clear"
+
+[node name="Spacer" type="Control" parent="Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LoadFromResourceButton" type="Button" parent="Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load from Resource"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InputContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ExpressionLabel" type="Label" parent="HSplitContainer/InputContainer"]
+layout_mode = 2
+text = "Expression:"
+
+[node name="ExpressionEdit" type="TextEdit" parent="HSplitContainer/InputContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+placeholder_text = "Enter expression (e.g., 20 + (200 * (L-1))*L)"
+wrap_mode = 1
+
+[node name="VariablesLabel" type="Label" parent="HSplitContainer/InputContainer"]
+layout_mode = 2
+text = "Variables:"
+
+[node name="VariablesScrollContainer" type="ScrollContainer" parent="HSplitContainer/InputContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VariablesContainer" type="VBoxContainer" parent="HSplitContainer/InputContainer/VariablesScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddVariableButton" type="Button" parent="HSplitContainer/InputContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+ Add Variable"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="HSplitContainer/InputContainer"]
+layout_mode = 2
+
+[node name="EvaluateButton" type="Button" parent="HSplitContainer/InputContainer/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Evaluate"
+
+[node name="TestRangeButton" type="Button" parent="HSplitContainer/InputContainer/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test Range"
+
+[node name="OutputContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResultLabel" type="Label" parent="HSplitContainer/OutputContainer"]
+layout_mode = 2
+text = "Result:"
+
+[node name="ResultValue" type="RichTextLabel" parent="HSplitContainer/OutputContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=gray]No result yet[/color]"
+fit_content = true
+scroll_active = false
+
+[node name="ErrorsLabel" type="Label" parent="HSplitContainer/OutputContainer"]
+layout_mode = 2
+text = "Errors/Messages:"
+
+[node name="ErrorsDisplay" type="RichTextLabel" parent="HSplitContainer/OutputContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=gray]No errors[/color]"
+fit_content = true
+
+[node name="RangeResultsLabel" type="Label" parent="HSplitContainer/OutputContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Range Results:"
+visible = false
+
+[node name="RangeResultsDisplay" type="TextEdit" parent="HSplitContainer/OutputContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+editable = false
+wrap_mode = 1
+visible = false
+
+[node name="RangeDialog" type="AcceptDialog" parent="."]
+unique_name_in_owner = true
+title = "Range Test Configuration"
+size = Vector2i(400, 200)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RangeDialog"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 149.0
+
+[node name="VariableLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+layout_mode = 2
+text = "Variable to test:"
+
+[node name="VariableOption" type="OptionButton" parent="RangeDialog/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StartLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+layout_mode = 2
+text = "Start value:"
+
+[node name="StartSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = -1000.0
+max_value = 1000.0
+value = 1.0
+
+[node name="EndLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+layout_mode = 2
+text = "End value:"
+
+[node name="EndSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = -1000.0
+max_value = 1000.0
+value = 20.0
+
+[node name="StepLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+layout_mode = 2
+text = "Step:"
+
+[node name="StepSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.01
+max_value = 100.0
+step = 0.1
+value = 1.0

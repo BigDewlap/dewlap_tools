@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://uqvo0uty37oe"]
 
-[ext_resource type="Script" uid="uid://cncgudmioruyt" path="res://addons/dewlap_tools/display/game_aspect_ratio_manager.gd" id="1_cheky"]
+[ext_resource type="Script" uid="uid://c0r3ua1poetc6" path="res://addons/dewlap_tools/display/game_aspect_ratio_manager.gd" id="1_cheky"]
 
 [node name="GameAspectRatioManager" type="Node"]
 script = ExtResource("1_cheky")

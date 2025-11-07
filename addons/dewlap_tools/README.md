@@ -1,6 +1,6 @@
 # Dewlap Tools
 
-A Godot 4.5+ plugin providing utility classes for resource management, logging, music playback, display handling, settings, and CSV parsing.
+A Godot 4.5+ plugin providing utility classes for resource management, logging, music playback, display handling, settings, CSV parsing, and editor tools.
 
 ## Installation
 
@@ -8,6 +8,41 @@ A Godot 4.5+ plugin providing utility classes for resource management, logging, 
 2. Enable the plugin in Project Settings > Plugins > Dewlap Tools
 
 ## Features
+
+### Editor Tools
+
+**Expression Evaluator** - Bottom panel tool for testing Godot Expression objects:
+
+```gdscript
+# Test expressions interactively in the editor
+# Expression: 20 + (200 * (L-1))*L
+# Variable L: 5
+# Result: 4020
+```
+
+Features:
+- Parse and evaluate Expression strings with variables
+- Dynamic variable management (add/remove test values)
+- Range testing (evaluate across multiple values)
+- Load expressions from Upgrade resources automatically
+- Real-time error display for parse and execute failures
+- Color-coded results
+
+**BBCode Editor** - Bottom panel tool for editing and previewing RichTextLabel BBCode:
+
+```gdscript
+# Edit BBCode markup with live preview
+[b]Bold text[/b]
+[color=red]Colored text[/color]
+[wave]Animated wave effect[/wave]
+```
+
+Features:
+- Multi-line BBCode editor
+- Live preview with SubViewport rendering
+- Font and font size selection
+- Preview scaling (1x-4x)
+- Apply changes to selected RichTextLabel nodes
 
 ### Resources
 **ResourceUtil** - Static helper functions for managing project resources:
