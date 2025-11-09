@@ -30,7 +30,7 @@ func _ready() -> void:
 
 
 func _scan_fonts() -> void:
-    """Scan assets/fonts directory for available fonts."""
+    #Scan assets/fonts directory for available fonts.#
     var fonts_dir: String = "res://assets/fonts/"
     var dir: DirAccess = DirAccess.open(fonts_dir)
 
@@ -69,7 +69,7 @@ func _scan_fonts() -> void:
 
 
 func _connect_signals() -> void:
-    """Connect all control signals."""
+    #Connect all control signals.#
     text_edit.text_changed.connect(_on_text_changed)
     font_dropdown.item_selected.connect(_on_font_selected)
     font_size_spinner.value_changed.connect(_on_font_size_changed)
@@ -80,7 +80,7 @@ func _connect_signals() -> void:
 
 
 func _initialize_viewport() -> void:
-    """Initialize SubViewport to base game resolution."""
+    #Initialize SubViewport to base game resolution.#
     var base_size: Vector2i = Vector2i(480, 360)
 
     # Set SubViewport to constant resolution (never changes)
@@ -96,7 +96,7 @@ func _initialize_viewport() -> void:
 
 
 func set_edited_node(node: RichTextLabel) -> void:
-    """Load a RichTextLabel node for editing."""
+    #Load a RichTextLabel node for editing.#
     if current_node == node:
         return
 
@@ -105,7 +105,7 @@ func set_edited_node(node: RichTextLabel) -> void:
 
 
 func clear_editor() -> void:
-    """Clear the editor when no node is selected."""
+    #Clear the editor when no node is selected.#
     current_node = null
     updating = true
     text_edit.text = ""
@@ -114,7 +114,7 @@ func clear_editor() -> void:
 
 
 func _load_settings_from_node() -> void:
-    """Load text and settings from the currently selected node."""
+    #Load text and settings from the currently selected node.#
     if not current_node:
         clear_editor()
         return
@@ -138,7 +138,7 @@ func _load_settings_from_node() -> void:
 
 
 func _set_font_dropdown_from_font(font: Font) -> void:
-    """Set font dropdown selection based on current font."""
+    #Set font dropdown selection based on current font.#
     if not font:
         font_dropdown.selected = 0
         return
@@ -153,7 +153,7 @@ func _set_font_dropdown_from_font(font: Font) -> void:
 
 
 func _on_text_changed() -> void:
-    """Update preview and sync to node when text changes."""
+    #Update preview and sync to node when text changes.#
     if updating:
         return
 
@@ -168,7 +168,7 @@ func _on_text_changed() -> void:
 
 
 func _on_font_selected(index: int) -> void:
-    """Handle font selection change."""
+    #Handle font selection change.#
     if updating:
         return
 
@@ -189,7 +189,7 @@ func _on_font_selected(index: int) -> void:
 
 
 func _on_font_size_changed(value: float) -> void:
-    """Handle font size change."""
+    #Handle font size change.#
     if updating:
         return
 
@@ -201,7 +201,7 @@ func _on_font_size_changed(value: float) -> void:
 
 
 func _on_scale_button_pressed(scale: int) -> void:
-    """Handle resolution scale button press."""
+    #Handle resolution scale button press.#
     current_scale = scale
 
     # Update ONLY the TextureRect display size, NOT the SubViewport render size

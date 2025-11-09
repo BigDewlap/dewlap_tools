@@ -6,7 +6,7 @@ var editor_panel: Control = null
 
 func _enter_tree() -> void:
     # Load and instantiate the editor panel scene
-    var panel_scene: PackedScene = preload("res://addons/dewlap_tools/richtextlabel_editor/bbcode_editor_panel.tscn")
+    var panel_scene: PackedScene = preload("bbcode_editor_panel.tscn")
     editor_panel = panel_scene.instantiate()
 
     # Add as bottom panel (always available)

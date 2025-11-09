@@ -3,10 +3,9 @@ extends EditorPlugin
 
 var editor_panel: Control = null
 
-
 func _enter_tree() -> void:
     # Load and instantiate the editor panel scene
-    var panel_scene: PackedScene = preload("res://addons/dewlap_tools/expression_evaluator/expression_panel.tscn")
+    var panel_scene: PackedScene = preload("expression_panel.tscn")
     editor_panel = panel_scene.instantiate()
 
     # Add as bottom panel (always available)
@@ -32,15 +31,15 @@ func _exit_tree() -> void:
 
 
 func _on_selection_changed() -> void:
-	"""Handle editor selection changes - load expressions from selected resources."""
+    #"""Handle editor selection changes - load expressions from selected resources."""
     var selection: EditorSelection = get_editor_interface().get_selection()
     var selected_nodes: Array[Node] = selection.get_selected_nodes()
 
-    # Check if a single node/resource is selected
+# Check if a single node/resource is selected
     if selected_nodes.size() == 1:
         var selected: Node = selected_nodes[0]
 
-        # Try to load expression from resource (e.g., Upgrade)
-        # The panel will handle checking for expression properties
+    # Try to load expression from resource (e.g., Upgrade)
+    # The panel will handle checking for expression properties
         if editor_panel.has_method("try_load_from_resource"):
             editor_panel.try_load_from_resource(selected)
