@@ -9,8 +9,10 @@ var base_size
 
 var root_window:Window
 var internal_change = false
+var _previous_is_landscape: bool = true
 
 signal content_scale_size_changed
+signal orientation_changed(is_landscape: bool)
 
 func _ready():
     #Set the root window node to it's extension script
@@ -64,3 +66,8 @@ func _on_window_resized():
     internal_change = true
     root_window.content_scale_size = new_size
     content_scale_size_changed.emit()
+
+    # Emit orientation change signal if orientation has changed
+    if is_landscape != _previous_is_landscape:
+        _previous_is_landscape = is_landscape
+        orientation_changed.emit(is_landscape)
