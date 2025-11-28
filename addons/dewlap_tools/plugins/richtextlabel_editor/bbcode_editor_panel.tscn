@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://buvp5o0xs3lnt"]
+[gd_scene load_steps=3 format=3 uid="uid://buvp5o0xs3lnt"]
 
 [ext_resource type="Script" uid="uid://bkxbsxwjd8a2p" path="res://addons/dewlap_tools/plugins/richtextlabel_editor/bbcode_editor_panel.gd" id="1_k8h7d"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xepyr"]
+viewport_path = NodePath("HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/SubViewport")
 
 [node name="BBCodeEditorPanel" type="VBoxContainer"]
 anchors_preset = 15
@@ -25,7 +28,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 selected = 0
-item_count = 17
+item_count = 21
 popup/item_0/text = "(Default)"
 popup/item_0/id = 0
 popup/item_1/text = "Kenney Blocks"
@@ -46,20 +49,28 @@ popup/item_8/text = "Kenney Pixel Square"
 popup/item_8/id = 8
 popup/item_9/text = "Party_Pack_Normal"
 popup/item_9/id = 9
-popup/item_10/text = "PixelifySans-VariableFont_wght"
+popup/item_10/text = "Pixel12x10-v1.1.0"
 popup/item_10/id = 10
-popup/item_11/text = "PressStart2P-Regular"
+popup/item_11/text = "Pixel12x10Mono-v1.1.0"
 popup/item_11/id = 11
-popup/item_12/text = "Simple_Script"
+popup/item_12/text = "PixelifySans-VariableFont_wght"
 popup/item_12/id = 12
-popup/item_13/text = "m3x6"
+popup/item_13/text = "PressStart2P-Regular"
 popup/item_13/id = 13
-popup/item_14/text = "m5x7"
+popup/item_14/text = "PublicPixel"
 popup/item_14/id = 14
-popup/item_15/text = "m6x11"
+popup/item_15/text = "Simple_Script"
 popup/item_15/id = 15
-popup/item_16/text = "m6x11plus"
+popup/item_16/text = "fusion-pixel-12px"
 popup/item_16/id = 16
+popup/item_17/text = "m3x6"
+popup/item_17/id = 17
+popup/item_18/text = "m5x7"
+popup/item_18/id = 18
+popup/item_19/text = "m6x11"
+popup/item_19/id = 19
+popup/item_20/text = "m6x11plus"
+popup/item_20/id = 20
 
 [node name="SizeLabel" type="Label" parent="Toolbar/Row1"]
 layout_mode = 2
@@ -166,15 +177,17 @@ size_flags_vertical = 3
 
 [node name="PreviewTextureRect" type="TextureRect" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CenterContainer"]
 unique_name_in_owner = true
+texture_filter = 1
 custom_minimum_size = Vector2(480, 360)
 layout_mode = 2
-texture_filter = 1
+texture = SubResource("ViewportTexture_xepyr")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="SubViewport" type="SubViewport" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(480, 360)
 render_target_update_mode = 4
 

@@ -2,9 +2,9 @@ extends Node
 
 var base_size
 
-@export var landscape_range_min:float = 4.0/3.0
+@export var landscape_range_min:float = 16.0/10.0
 @export var landscape_range_max:float = 20.0/9.0
-@export var portrait_range_max:float = 3.0/4.0
+@export var portrait_range_max:float = 10.0/16.0
 @export var portrait_range_min:float = 9.0/20.0
 
 var root_window:Window
