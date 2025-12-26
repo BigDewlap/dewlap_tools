@@ -128,3 +128,10 @@ func duplicate() -> Set:
 func merge(other: Set) -> void:
     for element in other.to_array():
         _data[element] = true
+
+
+## Returns a random element from the set, or null if the set is empty.
+func pick_random() -> Variant:
+    if _data.is_empty():
+        return null
+    return _data.keys().pick_random()
