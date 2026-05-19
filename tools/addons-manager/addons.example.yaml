@@ -1,0 +1,41 @@
+# addons.yaml — Godot addon sync configuration
+#
+# Copy this file to addons.yaml and edit it for your project.
+# Run from the project root: uv run addons-manager/sync_addons.py <command>
+
+# Optional: override the local namespace directory name.
+# Defaults to "<project-folder-name>-addons" (e.g. "my-game-addons").
+# local_namespace: my-game-addons
+
+# Optional: default install mode for local dependencies.
+# "copy" (default) — copies the addon directory into addons/
+# "symlink"        — creates a symlink/junction; live-edits are reflected immediately
+# local_mode: copy
+
+# Runtime addons — installed by both sync-dev and sync-prod
+runtime:
+  # Pinned to a specific tag, copying a subfolder of the repo into addons/
+  - repo: https://github.com/owner/some-addon
+    ref: "v1.2.3"
+    source: addons/some-addon   # subfolder inside the repo to install
+    target: some-addon          # name to use inside your addons/ directory
+
+  # Pinned to a branch (resolved to a commit SHA on first install)
+  - repo: https://github.com/owner/another-addon
+    ref: main
+    source: addons/another-addon
+    target: another-addon
+    # Per-addon local_mode override (only applies when a local copy is found):
+    local_mode: symlink
+
+  # Auto-detect: installs all folders found under addons/ in the repo archive.
+  # No SHA pinning — re-installs on every sync-prod run.
+  - repo: https://github.com/owner/multi-addon-repo
+    ref: "v2.0.0"
+
+# Editor-only addons — installed by sync-dev, skipped by sync-prod
+editor:
+  - repo: https://github.com/owner/editor-tool
+    ref: "v3.0.0"
+    source: addons/editor-tool
+    target: editor-tool
