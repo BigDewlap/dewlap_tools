@@ -81,7 +81,8 @@ static func create_reference_script(resource_class: Script, id_property_name:Str
     file_access.close()
 
     # Update editor after file changes
-    EditorInterface.get_resource_filesystem().scan()
+    if Engine.is_editor_hint():
+        EditorInterface.get_resource_filesystem().scan()
 
 ## Generates the reference script text from a list of resources
 static func _generate_reference_script_from_resources(resource_class: Script, resources: Array[Resource], id_property_name: String = "id") -> String:

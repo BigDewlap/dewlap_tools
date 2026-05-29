@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnkvl87a5yxur"]
+[gd_scene format=3 uid="uid://dnkvl87a5yxur"]
 
-[ext_resource type="Script" uid="uid://brtowoakldjpe" path="res://addons/dewlap_tools/plugins/expression_evaluator/expression_panel.gd" id="1_panel"]
+[ext_resource type="Script" uid="uid://bo8fyfc81dr6k" path="res://addons/dewlap_tools/plugins/expression_evaluator/expression_panel.gd" id="1_panel"]
 
-[node name="ExpressionPanel" type="VBoxContainer"]
+[node name="ExpressionPanel" type="VBoxContainer" unique_id=319881118]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,92 +10,92 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_panel")
 
-[node name="Toolbar" type="HBoxContainer" parent="."]
+[node name="Toolbar" type="HBoxContainer" parent="." unique_id=2145621791]
 layout_mode = 2
 
-[node name="ParseButton" type="Button" parent="Toolbar"]
+[node name="ParseButton" type="Button" parent="Toolbar" unique_id=833994813]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Parse"
 
-[node name="ClearButton" type="Button" parent="Toolbar"]
+[node name="ClearButton" type="Button" parent="Toolbar" unique_id=1780800192]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Clear"
 
-[node name="Spacer" type="Control" parent="Toolbar"]
+[node name="Spacer" type="Control" parent="Toolbar" unique_id=1161546080]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LoadFromResourceButton" type="Button" parent="Toolbar"]
+[node name="LoadFromResourceButton" type="Button" parent="Toolbar" unique_id=971337143]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Load from Resource"
 
-[node name="HSeparator" type="HSeparator" parent="."]
+[node name="HSeparator" type="HSeparator" parent="." unique_id=427687208]
 layout_mode = 2
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=206268298]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="InputContainer" type="VBoxContainer" parent="HSplitContainer"]
+[node name="InputContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=1777221342]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ExpressionLabel" type="Label" parent="HSplitContainer/InputContainer"]
+[node name="ExpressionLabel" type="Label" parent="HSplitContainer/InputContainer" unique_id=322043440]
 layout_mode = 2
 text = "Expression:"
 
-[node name="ExpressionEdit" type="TextEdit" parent="HSplitContainer/InputContainer"]
+[node name="ExpressionEdit" type="TextEdit" parent="HSplitContainer/InputContainer" unique_id=170206409]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 placeholder_text = "Enter expression (e.g., 20 + (200 * (L-1))*L)"
 wrap_mode = 1
 
-[node name="VariablesLabel" type="Label" parent="HSplitContainer/InputContainer"]
+[node name="VariablesLabel" type="Label" parent="HSplitContainer/InputContainer" unique_id=303620697]
 layout_mode = 2
 text = "Variables:"
 
-[node name="VariablesScrollContainer" type="ScrollContainer" parent="HSplitContainer/InputContainer"]
+[node name="VariablesScrollContainer" type="ScrollContainer" parent="HSplitContainer/InputContainer" unique_id=1869652848]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VariablesContainer" type="VBoxContainer" parent="HSplitContainer/InputContainer/VariablesScrollContainer"]
+[node name="VariablesContainer" type="VBoxContainer" parent="HSplitContainer/InputContainer/VariablesScrollContainer" unique_id=522341403]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="AddVariableButton" type="Button" parent="HSplitContainer/InputContainer"]
+[node name="AddVariableButton" type="Button" parent="HSplitContainer/InputContainer" unique_id=1542466488]
 unique_name_in_owner = true
 layout_mode = 2
 text = "+ Add Variable"
 
-[node name="ButtonsContainer" type="HBoxContainer" parent="HSplitContainer/InputContainer"]
+[node name="ButtonsContainer" type="HBoxContainer" parent="HSplitContainer/InputContainer" unique_id=41191283]
 layout_mode = 2
 
-[node name="EvaluateButton" type="Button" parent="HSplitContainer/InputContainer/ButtonsContainer"]
+[node name="EvaluateButton" type="Button" parent="HSplitContainer/InputContainer/ButtonsContainer" unique_id=1343952995]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Evaluate"
 
-[node name="TestRangeButton" type="Button" parent="HSplitContainer/InputContainer/ButtonsContainer"]
+[node name="TestRangeButton" type="Button" parent="HSplitContainer/InputContainer/ButtonsContainer" unique_id=1559628417]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Test Range"
 
-[node name="OutputContainer" type="VBoxContainer" parent="HSplitContainer"]
+[node name="OutputContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=1789479673]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ResultLabel" type="Label" parent="HSplitContainer/OutputContainer"]
+[node name="ResultLabel" type="Label" parent="HSplitContainer/OutputContainer" unique_id=750490899]
 layout_mode = 2
 text = "Result:"
 
-[node name="ResultValue" type="RichTextLabel" parent="HSplitContainer/OutputContainer"]
+[node name="ResultValue" type="RichTextLabel" parent="HSplitContainer/OutputContainer" unique_id=1928106873]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
@@ -104,11 +104,11 @@ text = "[color=gray]No result yet[/color]"
 fit_content = true
 scroll_active = false
 
-[node name="ErrorsLabel" type="Label" parent="HSplitContainer/OutputContainer"]
+[node name="ErrorsLabel" type="Label" parent="HSplitContainer/OutputContainer" unique_id=1631118446]
 layout_mode = 2
 text = "Errors/Messages:"
 
-[node name="ErrorsDisplay" type="RichTextLabel" parent="HSplitContainer/OutputContainer"]
+[node name="ErrorsDisplay" type="RichTextLabel" parent="HSplitContainer/OutputContainer" unique_id=1131635703]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -116,69 +116,68 @@ bbcode_enabled = true
 text = "[color=gray]No errors[/color]"
 fit_content = true
 
-[node name="RangeResultsLabel" type="Label" parent="HSplitContainer/OutputContainer"]
+[node name="RangeResultsLabel" type="Label" parent="HSplitContainer/OutputContainer" unique_id=1256935474]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Range Results:"
-visible = false
 
-[node name="RangeResultsDisplay" type="TextEdit" parent="HSplitContainer/OutputContainer"]
+[node name="RangeResultsDisplay" type="TextEdit" parent="HSplitContainer/OutputContainer" unique_id=810406404]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 editable = false
 wrap_mode = 1
-visible = false
 
-[node name="RangeDialog" type="AcceptDialog" parent="."]
+[node name="RangeDialog" type="AcceptDialog" parent="." unique_id=1294060702]
 unique_name_in_owner = true
 title = "Range Test Configuration"
 size = Vector2i(400, 200)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RangeDialog"]
+[node name="VBoxContainer" type="VBoxContainer" parent="RangeDialog" unique_id=1323258313]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 392.0
 offset_bottom = 149.0
 
-[node name="VariableLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+[node name="VariableLabel" type="Label" parent="RangeDialog/VBoxContainer" unique_id=1300125438]
 layout_mode = 2
 text = "Variable to test:"
 
-[node name="VariableOption" type="OptionButton" parent="RangeDialog/VBoxContainer"]
+[node name="VariableOption" type="OptionButton" parent="RangeDialog/VBoxContainer" unique_id=125261007]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="StartLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+[node name="StartLabel" type="Label" parent="RangeDialog/VBoxContainer" unique_id=1723474160]
 layout_mode = 2
 text = "Start value:"
 
-[node name="StartSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer"]
+[node name="StartSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer" unique_id=530117498]
 unique_name_in_owner = true
 layout_mode = 2
 min_value = -1000.0
 max_value = 1000.0
 value = 1.0
 
-[node name="EndLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+[node name="EndLabel" type="Label" parent="RangeDialog/VBoxContainer" unique_id=1476285854]
 layout_mode = 2
 text = "End value:"
 
-[node name="EndSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer"]
+[node name="EndSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer" unique_id=2071835451]
 unique_name_in_owner = true
 layout_mode = 2
 min_value = -1000.0
 max_value = 1000.0
 value = 20.0
 
-[node name="StepLabel" type="Label" parent="RangeDialog/VBoxContainer"]
+[node name="StepLabel" type="Label" parent="RangeDialog/VBoxContainer" unique_id=1934160538]
 layout_mode = 2
 text = "Step:"
 
-[node name="StepSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer"]
+[node name="StepSpinBox" type="SpinBox" parent="RangeDialog/VBoxContainer" unique_id=2122242458]
 unique_name_in_owner = true
 layout_mode = 2
 min_value = 0.01
-max_value = 100.0
 step = 0.1
-value = 1.0
+value = 1.01

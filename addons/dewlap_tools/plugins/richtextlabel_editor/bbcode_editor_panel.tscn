@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://buvp5o0xs3lnt"]
+[gd_scene format=3 uid="uid://buvp5o0xs3lnt"]
 
-[ext_resource type="Script" uid="uid://bkxbsxwjd8a2p" path="res://addons/dewlap_tools/plugins/richtextlabel_editor/bbcode_editor_panel.gd" id="1_k8h7d"]
+[ext_resource type="Script" uid="uid://dv2puliahm6he" path="res://addons/dewlap_tools/plugins/richtextlabel_editor/bbcode_editor_panel.gd" id="1_k8h7d"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xepyr"]
 viewport_path = NodePath("HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/SubViewport")
 
-[node name="BBCodeEditorPanel" type="VBoxContainer"]
+[node name="BBCodeEditorPanel" type="VBoxContainer" unique_id=1700489210]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,17 +13,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k8h7d")
 
-[node name="Toolbar" type="VBoxContainer" parent="."]
+[node name="Toolbar" type="VBoxContainer" parent="." unique_id=230013162]
 layout_mode = 2
 
-[node name="Row1" type="HBoxContainer" parent="Toolbar"]
+[node name="Row1" type="HBoxContainer" parent="Toolbar" unique_id=1063606602]
 layout_mode = 2
 
-[node name="FontLabel" type="Label" parent="Toolbar/Row1"]
+[node name="FontLabel" type="Label" parent="Toolbar/Row1" unique_id=1177603289]
 layout_mode = 2
 text = "Font:"
 
-[node name="FontDropdown" type="OptionButton" parent="Toolbar/Row1"]
+[node name="FontDropdown" type="OptionButton" parent="Toolbar/Row1" unique_id=1513444472]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -72,70 +72,70 @@ popup/item_19/id = 19
 popup/item_20/text = "m6x11plus"
 popup/item_20/id = 20
 
-[node name="SizeLabel" type="Label" parent="Toolbar/Row1"]
+[node name="SizeLabel" type="Label" parent="Toolbar/Row1" unique_id=910709749]
 layout_mode = 2
 text = "Size:"
 
-[node name="FontSizeSpinner" type="SpinBox" parent="Toolbar/Row1"]
+[node name="FontSizeSpinner" type="SpinBox" parent="Toolbar/Row1" unique_id=1489783608]
 unique_name_in_owner = true
 layout_mode = 2
 min_value = 8.0
 max_value = 64.0
 value = 16.0
 
-[node name="ApplyToNodeCheckbox" type="CheckBox" parent="Toolbar/Row1"]
+[node name="ApplyToNodeCheckbox" type="CheckBox" parent="Toolbar/Row1" unique_id=2049459403]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Apply to Node"
 
-[node name="Row2" type="HBoxContainer" parent="Toolbar"]
+[node name="Row2" type="HBoxContainer" parent="Toolbar" unique_id=420523861]
 layout_mode = 2
 
-[node name="ScaleLabel" type="Label" parent="Toolbar/Row2"]
+[node name="ScaleLabel" type="Label" parent="Toolbar/Row2" unique_id=669097837]
 layout_mode = 2
 text = "Scale:"
 
-[node name="Scale1xButton" type="Button" parent="Toolbar/Row2"]
+[node name="Scale1xButton" type="Button" parent="Toolbar/Row2" unique_id=2088783463]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
 text = "1x"
 
-[node name="Scale2xButton" type="Button" parent="Toolbar/Row2"]
+[node name="Scale2xButton" type="Button" parent="Toolbar/Row2" unique_id=139875613]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "2x"
 
-[node name="Scale3xButton" type="Button" parent="Toolbar/Row2"]
+[node name="Scale3xButton" type="Button" parent="Toolbar/Row2" unique_id=4364393]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "3x"
 
-[node name="Scale4xButton" type="Button" parent="Toolbar/Row2"]
+[node name="Scale4xButton" type="Button" parent="Toolbar/Row2" unique_id=918176809]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "4x"
 
-[node name="HSeparator" type="HSeparator" parent="Toolbar"]
+[node name="HSeparator" type="HSeparator" parent="Toolbar" unique_id=804215520]
 layout_mode = 2
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=2066390283]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="EditorContainer" type="VBoxContainer" parent="HSplitContainer"]
+[node name="EditorContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=1957528061]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EditorLabel" type="Label" parent="HSplitContainer/EditorContainer"]
+[node name="EditorLabel" type="Label" parent="HSplitContainer/EditorContainer" unique_id=827877655]
 layout_mode = 2
 text = "BBCode Editor:"
 
-[node name="TextEdit" type="TextEdit" parent="HSplitContainer/EditorContainer"]
+[node name="TextEdit" type="TextEdit" parent="HSplitContainer/EditorContainer" unique_id=810051811]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -144,38 +144,38 @@ wrap_mode = 1
 scroll_smooth = true
 minimap_draw = true
 
-[node name="PreviewContainer" type="VBoxContainer" parent="HSplitContainer"]
+[node name="PreviewContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=1765771489]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PreviewLabel" type="Label" parent="HSplitContainer/PreviewContainer"]
+[node name="PreviewLabel" type="Label" parent="HSplitContainer/PreviewContainer" unique_id=966416195]
 layout_mode = 2
 text = "Live Preview:"
 
-[node name="PanelContainer" type="PanelContainer" parent="HSplitContainer/PreviewContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HSplitContainer/PreviewContainer" unique_id=1798104104]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/PreviewContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/PreviewContainer/PanelContainer" unique_id=1905296910]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer" unique_id=1221450621]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1863550800]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=311769619]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PreviewTextureRect" type="TextureRect" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CenterContainer"]
+[node name="PreviewTextureRect" type="TextureRect" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CenterContainer" unique_id=771754576]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(480, 360)
@@ -184,14 +184,14 @@ texture = SubResource("ViewportTexture_xepyr")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SubViewport" type="SubViewport" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="SubViewport" type="SubViewport" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=173434058]
 unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(480, 360)
 render_target_update_mode = 4
 
-[node name="PreviewLabel" type="RichTextLabel" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/SubViewport"]
+[node name="PreviewLabel" type="RichTextLabel" parent="HSplitContainer/PreviewContainer/PanelContainer/MarginContainer/VBoxContainer/SubViewport" unique_id=2003439788]
 unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
