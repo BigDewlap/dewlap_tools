@@ -28,24 +28,24 @@ class_name [[RESOURCE_CLASS_NAME]]Ref extends Object
 static var resource_paths:Dictionary[StringName, String] = [[PATHS_DICTIONARY]]
 
 static func getr(id: String, cache_mode: ResourceLoader.CacheMode = ResourceLoader.CacheMode.CACHE_MODE_REUSE) -> [[RESOURCE_CLASS_NAME]]:
-    if !id:
-        return null
-    var path:String = resource_paths.get(id, "") as String
-    if !path:
-        return null
-    return ResourceLoader.load(path, "", cache_mode)
+	if !id:
+		return null
+	var path:String = resource_paths.get(id, "") as String
+	if !path:
+		return null
+	return ResourceLoader.load(path, "", cache_mode)
 
 static func getrall(cache_mode: ResourceLoader.CacheMode = ResourceLoader.CacheMode.CACHE_MODE_REUSE) -> Array[[[RESOURCE_CLASS_NAME]]]:
-    var result_array: Array[[[RESOURCE_CLASS_NAME]]] = []
-    for resource_path in resource_paths.values():
-        result_array.append(ResourceLoader.load(resource_path, "", cache_mode))
-    return result_array
+	var result_array: Array[[[RESOURCE_CLASS_NAME]]] = []
+	for resource_path in resource_paths.values():
+		result_array.append(ResourceLoader.load(resource_path, "", cache_mode))
+	return result_array
 """
 
 const getter_template = \
 """
 static func getr_[[RESOURCE_ID]](cache_mode: ResourceLoader.CacheMode = ResourceLoader.CacheMode.CACHE_MODE_REUSE) -> [[RESOURCE_CLASS_NAME]]:
-    return getr("[[RESOURCE_ID]]", cache_mode)
+	return getr("[[RESOURCE_ID]]", cache_mode)
 """
 
 ## Generates a reference script for a [Resource] type with static access to its instances. If [code]target_path[/code]
