@@ -8,6 +8,7 @@
 ## UpgradeRef.getr("wood_sword")
 ## UpgradeRef.getr_wood_sword()
 ## UpgradeRef.WOOD_SWORD
+## UpgradeRef.get_all()
 ## [/codeblock]
 ##
 ## All resources are indexed at generation time using their identity property and path.
@@ -18,6 +19,9 @@
 ## [/codeblock]
 class_name ResourceReferenceGenerator extends EditorScript
 
+# Naming: per-resource accessors use the getr_ prefix ("get resource"), which keeps generated
+# members out of the get_* namespace — a resource with id "all" generates getr_all() and ALL,
+# so the class-level get_all() below can never collide with a generated accessor.
 const script_template = \
 """#DO NOT EDIT: Generated using ResourceReferenceGenerator
 @tool
@@ -35,7 +39,7 @@ static func getr(id: String, cache_mode: ResourceLoader.CacheMode = ResourceLoad
 		return null
 	return ResourceLoader.load(path, "", cache_mode)
 
-static func getrall(cache_mode: ResourceLoader.CacheMode = ResourceLoader.CacheMode.CACHE_MODE_REUSE) -> Array[[[RESOURCE_CLASS_NAME]]]:
+static func get_all(cache_mode: ResourceLoader.CacheMode = ResourceLoader.CacheMode.CACHE_MODE_REUSE) -> Array[[[RESOURCE_CLASS_NAME]]]:
 	var result_array: Array[[[RESOURCE_CLASS_NAME]]] = []
 	for resource_path in resource_paths.values():
 		result_array.append(ResourceLoader.load(resource_path, "", cache_mode))
